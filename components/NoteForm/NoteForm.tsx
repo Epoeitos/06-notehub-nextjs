@@ -1,23 +1,21 @@
-import css from "./NoteForm.module.css";
+import css from './NoteForm.module.css';
 
-import { ErrorMessage, Field, Form, Formik, type FormikHelpers } from "formik";
-import { useId } from "react";
-import { type NewNote, type Note } from "../../types/note.ts";
-import * as Yup from "yup";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createNote } from "../../services/noteService.ts";
+import { ErrorMessage, Field, Form, Formik, type FormikHelpers } from 'formik';
+import { useId } from 'react';
+import * as Yup from 'yup';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { createNote } from '../../lib/api';
+import { NewNote, Note } from '../../types/note';
 
 interface NoteFormProps {
   onCancel: () => void;
   setIsModal: (type: boolean) => void;
-  setTypeModal: (type: "form" | "error" | "create" | "delete") => void;
+  setTypeModal: (type: 'form' | 'error' | 'create' | 'delete') => void;
   setMessage: (mes: Note) => void;
-  setError: (er: string) => void;
 }
 
 export default function NoteForm({
   onCancel,
-  setError,
   setIsModal,
   setMessage,
   setTypeModal,
@@ -30,23 +28,19 @@ export default function NoteForm({
       const res = await createNote(data);
       return res;
     },
-    onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: ["note"] });
-      setIsModal(true);
-      setTypeModal("create");
+    onSuccess: data => {
+      queryClient.invalidateQueries({ queryKey: ['notes'] });
+      onCancel();
+      setTypeModal('create');
       setMessage(data);
-    },
-    onError: (error) => {
       setIsModal(true);
-      setTypeModal("error");
-      setError(error.message);
     },
   });
 
   const initVal: NewNote = {
-    title: "",
-    content: "",
-    tag: "Todo",
+    title: '',
+    content: '',
+    tag: 'Todo',
   };
 
   function handleSubmit(values: NewNote, actions: FormikHelpers<NewNote>) {
@@ -56,15 +50,15 @@ export default function NoteForm({
 
   const validationSchema = Yup.object().shape({
     title: Yup.string()
-      .min(3, "Min length 3 simbols.")
-      .max(50, "Max length 50 simbols.")
-      .required("This field is required"),
-    content: Yup.string().max(500, "Max length 500 simbols."),
+      .min(3, 'Min length 3 simbols.')
+      .max(50, 'Max length 50 simbols.')
+      .required('This field is required'),
+    content: Yup.string().max(500, 'Max length 500 simbols.'),
     tag: Yup.string()
-      .required("This field is required")
+      .required('This field is required')
       .oneOf(
-        ["Todo", "Work", "Personal", "Meeting", "Shopping"],
-        "Invalid tag."
+        ['Todo', 'Work', 'Personal', 'Meeting', 'Shopping'],
+        'Invalid tag.'
       ),
   });
 

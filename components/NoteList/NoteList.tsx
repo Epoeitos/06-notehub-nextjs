@@ -1,20 +1,19 @@
-import css from "./NoteList.module.css";
+import css from './NoteList.module.css';
 
-import { deleteNote } from "../../services/noteService.ts";
-import { type Note } from "../../types/note.ts";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import Link from 'next/link';
+import { deleteNote } from '../../lib/api';
+import { Note } from '../../types/note';
 
 interface NoteListProps {
   noteList: Note[];
   setIsModal: (type: boolean) => void;
-  setTypeModal: (type: "form" | "error" | "create" | "delete") => void;
+  setTypeModal: (type: 'form' | 'error' | 'create' | 'delete') => void;
   setMessage: (mes: Note) => void;
-  setError: (er: string) => void;
 }
 
 export default function NoteList({
   noteList,
-  setError,
   setIsModal,
   setMessage,
   setTypeModal,
@@ -26,27 +25,25 @@ export default function NoteList({
       const res = await deleteNote(id);
       return res;
     },
-    onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: ["note"] });
+    onSuccess: data => {
+      queryClient.invalidateQueries({ queryKey: ['notes'] });
       setIsModal(true);
-      setTypeModal("delete");
+      setTypeModal('delete');
       setMessage(data);
-    },
-    onError: (error) => {
-      setIsModal(true);
-      setTypeModal("error");
-      setError(error.message);
     },
   });
 
   return (
     <ul className={css.list}>
-      {noteList.map((note) => (
+      {noteList.map(note => (
         <li key={note.id} className={css.listItem}>
           <h2 className={css.title}>{note.title}</h2>
           <p className={css.content}>{note.content}</p>
           <div className={css.footer}>
             <span className={css.tag}>{note.tag}</span>
+            <Link className={css.link} href={`/notes/${note.id}`}>
+              View details
+            </Link>
             <button
               onClick={() => deleteMutation.mutate(note.id)}
               className={css.button}
