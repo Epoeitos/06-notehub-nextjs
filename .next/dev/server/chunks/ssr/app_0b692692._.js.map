@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/page.module.css [app-rsc] (css module)"],"sourcesContent":["__turbopack_context__.v({\n  \"container\": \"page-module__E0kJGG__container\",\n  \"description\": \"page-module__E0kJGG__description\",\n  \"main\": \"page-module__E0kJGG__main\",\n  \"title\": \"page-module__E0kJGG__title\",\n});\n"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA"}},
+    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///A:/projects/08.02/06-notehub-nextjs/app/loading.tsx"],"sourcesContent":["import css from './page.module.css';\r\n\r\nexport default function Loading() {\r\n  return (\r\n    <main className={css.main}>\r\n      <p>Loading, please wait...</p>\r\n    </main>\r\n  );\r\n}"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAK,WAAW,kIAAG,CAAC,IAAI;kBACvB,cAAA,8OAAC;sBAAE;;;;;;;;;;;AAGT"}}]
+}
