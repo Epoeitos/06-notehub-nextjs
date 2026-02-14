@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///A:/projects/08.02/06-notehub-nextjs/components/TanStackProvider/TanStackProvider.tsx"],"sourcesContent":["'use client';\r\n\r\nimport { useState } from 'react';\r\nimport { QueryClient, QueryClientProvider } from '@tanstack/react-query';\r\n\r\ninterface QueryProps {\r\n  children: React.ReactNode;\r\n}\r\n\r\nexport default function TanStackProvider({ children }: QueryProps) {\r\n  const [queryClient] = useState(() => new QueryClient());\r\n\r\n  return (\r\n    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>\r\n  );\r\n}"],"names":[],"mappings":";;;;;AAEA;AACA;AAAA;AAHA;;;;AASe,SAAS,iBAAiB,EAAE,QAAQ,EAAc;IAC/D,MAAM,CAAC,YAAY,GAAG,IAAA,iNAAQ,EAAC,IAAM,IAAI,4LAAW;IAEpD,qBACE,8OAAC,6MAAmB;QAAC,QAAQ;kBAAc;;;;;;AAE/C"}}]
+}
