@@ -5,20 +5,20 @@ import ReactPaginate from "react-paginate";
 interface PaginationProps {
   page: number;
   totalPages: number;
-  setPage: (page: number) => void;
+  onPageChange: (page: number) => void;
 }
 
 export default function Pagination({
   page,
   totalPages,
-  setPage,
+  onPageChange,
 }: PaginationProps) {
   return (
     <ReactPaginate
       pageCount={totalPages}
       pageRangeDisplayed={5}
       marginPagesDisplayed={1}
-      onPageChange={({ selected }) => setPage(selected + 1)}
+      onPageChange={({ selected }) => onPageChange(selected + 1)}
       forcePage={page - 1}
       containerClassName={css.pagination}
       activeClassName={css.active}

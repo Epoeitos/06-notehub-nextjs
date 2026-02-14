@@ -6,36 +6,22 @@ import { deleteNote } from '../../lib/api';
 import { Note } from '../../types/note';
 
 interface NoteListProps {
-  noteList: Note[];
-  setIsModal: (type: boolean) => void;
-  setTypeModal: (type: 'form' | 'error' | 'create' | 'delete') => void;
-  setMessage: (mes: Note) => void;
+  notes: Note[];
 }
 
-export default function NoteList({
-  noteList,
-  setIsModal,
-  setMessage,
-  setTypeModal,
-}: NoteListProps) {
+export default function NoteList({ notes }: NoteListProps) {
   const queryClient = useQueryClient();
 
   const deleteMutation = useMutation({
-    mutationFn: async (id: string) => {
-      const res = await deleteNote(id);
-      return res;
-    },
-    onSuccess: data => {
+    mutationFn: (id: string) => deleteNote(id),
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['notes'] });
-      setIsModal(true);
-      setTypeModal('delete');
-      setMessage(data);
     },
   });
 
   return (
     <ul className={css.list}>
-      {noteList.map(note => (
+      {notes.map(note => (
         <li key={note.id} className={css.listItem}>
           <h2 className={css.title}>{note.title}</h2>
           <p className={css.content}>{note.content}</p>

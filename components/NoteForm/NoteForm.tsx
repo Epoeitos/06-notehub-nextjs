@@ -5,35 +5,21 @@ import { useId } from 'react';
 import * as Yup from 'yup';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { createNote } from '../../lib/api';
-import { NewNote, Note } from '../../types/note';
+import { NewNote } from '../../types/note';
 
 interface NoteFormProps {
-  onCancel: () => void;
-  setIsModal: (type: boolean) => void;
-  setTypeModal: (type: 'form' | 'error' | 'create' | 'delete') => void;
-  setMessage: (mes: Note) => void;
+  onClose: () => void;
 }
 
-export default function NoteForm({
-  onCancel,
-  setIsModal,
-  setMessage,
-  setTypeModal,
-}: NoteFormProps) {
+export default function NoteForm({ onClose }: NoteFormProps) {
   const id = useId();
   const queryClient = useQueryClient();
 
   const createMutation = useMutation({
-    mutationFn: async (data: NewNote) => {
-      const res = await createNote(data);
-      return res;
-    },
-    onSuccess: data => {
+    mutationFn: (data: NewNote) => createNote(data),
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['notes'] });
-      onCancel();
-      setTypeModal('create');
-      setMessage(data);
-      setIsModal(true);
+      onClose();
     },
   });
 
@@ -105,7 +91,7 @@ export default function NoteForm({
         </div>
 
         <div className={css.actions}>
-          <button onClick={onCancel} type="button" className={css.cancelButton}>
+          <button onClick={onClose} type="button" className={css.cancelButton}>
             Cancel
           </button>
           <button type="submit" className={css.submitButton}>

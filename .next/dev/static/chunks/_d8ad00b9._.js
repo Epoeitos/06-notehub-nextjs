@@ -111,68 +111,62 @@ var _s = __turbopack_context__.k.signature();
 ;
 function NoteForm(t0) {
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(53);
-    if ($[0] !== "2995116a160bf9bef25588da051167e8efd2b33dd7392fc3c440722b8554b5c8") {
-        for(let $i = 0; $i < 53; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(50);
+    if ($[0] !== "40ac0c020ead228e354900d7fcfc312245a79b5ba8ea93086548b8f9159b18b0") {
+        for(let $i = 0; $i < 50; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "2995116a160bf9bef25588da051167e8efd2b33dd7392fc3c440722b8554b5c8";
+        $[0] = "40ac0c020ead228e354900d7fcfc312245a79b5ba8ea93086548b8f9159b18b0";
     }
-    const { onCancel, setIsModal, setMessage, setTypeModal } = t0;
+    const { onClose } = t0;
     const id = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useId"])();
     const queryClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"])();
     let t1;
-    if ($[1] !== onCancel || $[2] !== queryClient || $[3] !== setIsModal || $[4] !== setMessage || $[5] !== setTypeModal) {
+    if ($[1] !== onClose || $[2] !== queryClient) {
         t1 = {
             mutationFn: _temp,
-            onSuccess: (data_0)=>{
+            onSuccess: ()=>{
                 queryClient.invalidateQueries({
                     queryKey: [
                         "notes"
                     ]
                 });
-                onCancel();
-                setTypeModal("create");
-                setMessage(data_0);
-                setIsModal(true);
+                onClose();
             }
         };
-        $[1] = onCancel;
+        $[1] = onClose;
         $[2] = queryClient;
-        $[3] = setIsModal;
-        $[4] = setMessage;
-        $[5] = setTypeModal;
-        $[6] = t1;
+        $[3] = t1;
     } else {
-        t1 = $[6];
+        t1 = $[3];
     }
     const createMutation = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"])(t1);
     let t2;
-    if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[4] === Symbol.for("react.memo_cache_sentinel")) {
         t2 = {
             title: "",
             content: "",
             tag: "Todo"
         };
-        $[7] = t2;
+        $[4] = t2;
     } else {
-        t2 = $[7];
+        t2 = $[4];
     }
     const initVal = t2;
     let t3;
-    if ($[8] !== createMutation) {
+    if ($[5] !== createMutation) {
         t3 = function handleSubmit(values, actions) {
             createMutation.mutate(values);
             actions.resetForm();
         };
-        $[8] = createMutation;
-        $[9] = t3;
+        $[5] = createMutation;
+        $[6] = t3;
     } else {
-        t3 = $[9];
+        t3 = $[6];
     }
     const handleSubmit = t3;
     let t4;
-    if ($[10] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
         t4 = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["object"]().shape({
             title: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["string"]().min(3, "Min length 3 simbols.").max(50, "Max length 50 simbols.").required("This field is required"),
             content: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["string"]().max(500, "Max length 500 simbols."),
@@ -184,30 +178,30 @@ function NoteForm(t0) {
                 "Shopping"
             ], "Invalid tag.")
         });
-        $[10] = t4;
+        $[7] = t4;
     } else {
-        t4 = $[10];
+        t4 = $[7];
     }
     const validationSchema = t4;
     const t5 = `${id}-title`;
     let t6;
-    if ($[11] !== t5) {
+    if ($[8] !== t5) {
         t6 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
             htmlFor: t5,
             children: "Title"
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 94,
+            lineNumber: 82,
             columnNumber: 10
         }, this);
-        $[11] = t5;
-        $[12] = t6;
+        $[8] = t5;
+        $[9] = t6;
     } else {
-        t6 = $[12];
+        t6 = $[9];
     }
     const t7 = `${id}-title`;
     let t8;
-    if ($[13] !== t7) {
+    if ($[10] !== t7) {
         t8 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$formik$2f$dist$2f$formik$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Field"], {
             type: "text",
             id: t7,
@@ -215,31 +209,31 @@ function NoteForm(t0) {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].input
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 103,
+            lineNumber: 91,
             columnNumber: 10
         }, this);
-        $[13] = t7;
-        $[14] = t8;
+        $[10] = t7;
+        $[11] = t8;
     } else {
-        t8 = $[14];
+        t8 = $[11];
     }
     let t9;
-    if ($[15] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[12] === Symbol.for("react.memo_cache_sentinel")) {
         t9 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$formik$2f$dist$2f$formik$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ErrorMessage"], {
             name: "title",
             component: "span",
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].error
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 111,
+            lineNumber: 99,
             columnNumber: 10
         }, this);
-        $[15] = t9;
+        $[12] = t9;
     } else {
-        t9 = $[15];
+        t9 = $[12];
     }
     let t10;
-    if ($[16] !== t6 || $[17] !== t8) {
+    if ($[13] !== t6 || $[14] !== t8) {
         t10 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].formGroup,
             children: [
@@ -249,34 +243,34 @@ function NoteForm(t0) {
             ]
         }, void 0, true, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 118,
+            lineNumber: 106,
             columnNumber: 11
         }, this);
-        $[16] = t6;
-        $[17] = t8;
-        $[18] = t10;
+        $[13] = t6;
+        $[14] = t8;
+        $[15] = t10;
     } else {
-        t10 = $[18];
+        t10 = $[15];
     }
     const t11 = `${id}-content`;
     let t12;
-    if ($[19] !== t11) {
+    if ($[16] !== t11) {
         t12 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
             htmlFor: t11,
             children: "Content"
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 128,
+            lineNumber: 116,
             columnNumber: 11
         }, this);
-        $[19] = t11;
-        $[20] = t12;
+        $[16] = t11;
+        $[17] = t12;
     } else {
-        t12 = $[20];
+        t12 = $[17];
     }
     const t13 = `${id}-content`;
     let t14;
-    if ($[21] !== t13) {
+    if ($[18] !== t13) {
         t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$formik$2f$dist$2f$formik$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Field"], {
             as: "textarea",
             id: t13,
@@ -285,31 +279,31 @@ function NoteForm(t0) {
             rows: 8
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 137,
+            lineNumber: 125,
             columnNumber: 11
         }, this);
-        $[21] = t13;
-        $[22] = t14;
+        $[18] = t13;
+        $[19] = t14;
     } else {
-        t14 = $[22];
+        t14 = $[19];
     }
     let t15;
-    if ($[23] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[20] === Symbol.for("react.memo_cache_sentinel")) {
         t15 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$formik$2f$dist$2f$formik$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ErrorMessage"], {
             name: "content",
             component: "span",
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].error
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 145,
+            lineNumber: 133,
             columnNumber: 11
         }, this);
-        $[23] = t15;
+        $[20] = t15;
     } else {
-        t15 = $[23];
+        t15 = $[20];
     }
     let t16;
-    if ($[24] !== t12 || $[25] !== t14) {
+    if ($[21] !== t12 || $[22] !== t14) {
         t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].formGroup,
             children: [
@@ -319,30 +313,30 @@ function NoteForm(t0) {
             ]
         }, void 0, true, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 152,
+            lineNumber: 140,
             columnNumber: 11
         }, this);
-        $[24] = t12;
-        $[25] = t14;
-        $[26] = t16;
+        $[21] = t12;
+        $[22] = t14;
+        $[23] = t16;
     } else {
-        t16 = $[26];
+        t16 = $[23];
     }
     const t17 = `${id}-tag`;
     let t18;
-    if ($[27] !== t17) {
+    if ($[24] !== t17) {
         t18 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
             htmlFor: t17,
             children: "Tag"
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 162,
+            lineNumber: 150,
             columnNumber: 11
         }, this);
-        $[27] = t17;
-        $[28] = t18;
+        $[24] = t17;
+        $[25] = t18;
     } else {
-        t18 = $[28];
+        t18 = $[25];
     }
     const t19 = `${id}-tag`;
     let t20;
@@ -350,13 +344,13 @@ function NoteForm(t0) {
     let t22;
     let t23;
     let t24;
-    if ($[29] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[26] === Symbol.for("react.memo_cache_sentinel")) {
         t20 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
             value: "Todo",
             children: "Todo"
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 175,
+            lineNumber: 163,
             columnNumber: 11
         }, this);
         t21 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -364,7 +358,7 @@ function NoteForm(t0) {
             children: "Work"
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 176,
+            lineNumber: 164,
             columnNumber: 11
         }, this);
         t22 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -372,7 +366,7 @@ function NoteForm(t0) {
             children: "Personal"
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 177,
+            lineNumber: 165,
             columnNumber: 11
         }, this);
         t23 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -380,7 +374,7 @@ function NoteForm(t0) {
             children: "Meeting"
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 178,
+            lineNumber: 166,
             columnNumber: 11
         }, this);
         t24 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -388,23 +382,23 @@ function NoteForm(t0) {
             children: "Shopping"
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 179,
+            lineNumber: 167,
             columnNumber: 11
         }, this);
-        $[29] = t20;
-        $[30] = t21;
-        $[31] = t22;
-        $[32] = t23;
-        $[33] = t24;
+        $[26] = t20;
+        $[27] = t21;
+        $[28] = t22;
+        $[29] = t23;
+        $[30] = t24;
     } else {
-        t20 = $[29];
-        t21 = $[30];
-        t22 = $[31];
-        t23 = $[32];
-        t24 = $[33];
+        t20 = $[26];
+        t21 = $[27];
+        t22 = $[28];
+        t23 = $[29];
+        t24 = $[30];
     }
     let t25;
-    if ($[34] !== t19) {
+    if ($[31] !== t19) {
         t25 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$formik$2f$dist$2f$formik$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Field"], {
             as: "select",
             id: t19,
@@ -419,31 +413,31 @@ function NoteForm(t0) {
             ]
         }, void 0, true, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 194,
+            lineNumber: 182,
             columnNumber: 11
         }, this);
-        $[34] = t19;
-        $[35] = t25;
+        $[31] = t19;
+        $[32] = t25;
     } else {
-        t25 = $[35];
+        t25 = $[32];
     }
     let t26;
-    if ($[36] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[33] === Symbol.for("react.memo_cache_sentinel")) {
         t26 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$formik$2f$dist$2f$formik$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ErrorMessage"], {
             name: "tag",
             component: "span",
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].error
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 202,
+            lineNumber: 190,
             columnNumber: 11
         }, this);
-        $[36] = t26;
+        $[33] = t26;
     } else {
-        t26 = $[36];
+        t26 = $[33];
     }
     let t27;
-    if ($[37] !== t18 || $[38] !== t25) {
+    if ($[34] !== t18 || $[35] !== t25) {
         t27 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].formGroup,
             children: [
@@ -453,49 +447,49 @@ function NoteForm(t0) {
             ]
         }, void 0, true, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 209,
+            lineNumber: 197,
             columnNumber: 11
         }, this);
-        $[37] = t18;
-        $[38] = t25;
-        $[39] = t27;
+        $[34] = t18;
+        $[35] = t25;
+        $[36] = t27;
     } else {
-        t27 = $[39];
+        t27 = $[36];
     }
     let t28;
-    if ($[40] !== onCancel) {
+    if ($[37] !== onClose) {
         t28 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-            onClick: onCancel,
+            onClick: onClose,
             type: "button",
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cancelButton,
             children: "Cancel"
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 218,
+            lineNumber: 206,
             columnNumber: 11
         }, this);
-        $[40] = onCancel;
-        $[41] = t28;
+        $[37] = onClose;
+        $[38] = t28;
     } else {
-        t28 = $[41];
+        t28 = $[38];
     }
     let t29;
-    if ($[42] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[39] === Symbol.for("react.memo_cache_sentinel")) {
         t29 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
             type: "submit",
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].submitButton,
             children: "Create note"
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 226,
+            lineNumber: 214,
             columnNumber: 11
         }, this);
-        $[42] = t29;
+        $[39] = t29;
     } else {
-        t29 = $[42];
+        t29 = $[39];
     }
     let t30;
-    if ($[43] !== t28) {
+    if ($[40] !== t28) {
         t30 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].actions,
             children: [
@@ -504,16 +498,16 @@ function NoteForm(t0) {
             ]
         }, void 0, true, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 233,
+            lineNumber: 221,
             columnNumber: 11
         }, this);
-        $[43] = t28;
-        $[44] = t30;
+        $[40] = t28;
+        $[41] = t30;
     } else {
-        t30 = $[44];
+        t30 = $[41];
     }
     let t31;
-    if ($[45] !== t10 || $[46] !== t16 || $[47] !== t27 || $[48] !== t30) {
+    if ($[42] !== t10 || $[43] !== t16 || $[44] !== t27 || $[45] !== t30) {
         t31 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$formik$2f$dist$2f$formik$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Form"], {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].form,
             children: [
@@ -524,19 +518,19 @@ function NoteForm(t0) {
             ]
         }, void 0, true, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 241,
+            lineNumber: 229,
             columnNumber: 11
         }, this);
-        $[45] = t10;
-        $[46] = t16;
-        $[47] = t27;
-        $[48] = t30;
-        $[49] = t31;
+        $[42] = t10;
+        $[43] = t16;
+        $[44] = t27;
+        $[45] = t30;
+        $[46] = t31;
     } else {
-        t31 = $[49];
+        t31 = $[46];
     }
     let t32;
-    if ($[50] !== handleSubmit || $[51] !== t31) {
+    if ($[47] !== handleSubmit || $[48] !== t31) {
         t32 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$formik$2f$dist$2f$formik$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Formik"], {
             validationSchema: validationSchema,
             initialValues: initVal,
@@ -544,14 +538,14 @@ function NoteForm(t0) {
             children: t31
         }, void 0, false, {
             fileName: "[project]/components/NoteForm/NoteForm.tsx",
-            lineNumber: 252,
+            lineNumber: 240,
             columnNumber: 11
         }, this);
-        $[50] = handleSubmit;
-        $[51] = t31;
-        $[52] = t32;
+        $[47] = handleSubmit;
+        $[48] = t31;
+        $[49] = t32;
     } else {
-        t32 = $[52];
+        t32 = $[49];
     }
     return t32;
 }
@@ -563,9 +557,8 @@ _s(NoteForm, "qxZmXw/kSTQoXDtmSdUWvN/EVOg=", false, function() {
     ];
 });
 _c = NoteForm;
-async function _temp(data) {
-    const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createNote"])(data);
-    return res;
+function _temp(data) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createNote"])(data);
 }
 var _c;
 __turbopack_context__.k.register(_c, "NoteForm");
@@ -731,45 +724,39 @@ var _s = __turbopack_context__.k.signature();
 ;
 function NoteList(t0) {
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(13);
-    if ($[0] !== "c9ec15f78324120e565702d9f2098f0b6f3166768af4c59bfcd26a1ee29c13b7") {
-        for(let $i = 0; $i < 13; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(10);
+    if ($[0] !== "87dcbfaaf1046d3e01316ebba53cbe23b669831401c2d7f1e37a62c26c80f929") {
+        for(let $i = 0; $i < 10; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "c9ec15f78324120e565702d9f2098f0b6f3166768af4c59bfcd26a1ee29c13b7";
+        $[0] = "87dcbfaaf1046d3e01316ebba53cbe23b669831401c2d7f1e37a62c26c80f929";
     }
-    const { noteList, setIsModal, setMessage, setTypeModal } = t0;
+    const { notes } = t0;
     const queryClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"])();
     let t1;
-    if ($[1] !== queryClient || $[2] !== setIsModal || $[3] !== setMessage || $[4] !== setTypeModal) {
+    if ($[1] !== queryClient) {
         t1 = {
             mutationFn: _temp,
-            onSuccess: (data)=>{
+            onSuccess: ()=>{
                 queryClient.invalidateQueries({
                     queryKey: [
                         "notes"
                     ]
                 });
-                setIsModal(true);
-                setTypeModal("delete");
-                setMessage(data);
             }
         };
         $[1] = queryClient;
-        $[2] = setIsModal;
-        $[3] = setMessage;
-        $[4] = setTypeModal;
-        $[5] = t1;
+        $[2] = t1;
     } else {
-        t1 = $[5];
+        t1 = $[2];
     }
     const deleteMutation = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"])(t1);
     let t2;
-    if ($[6] !== deleteMutation || $[7] !== noteList) {
+    if ($[3] !== deleteMutation || $[4] !== notes) {
         let t3;
-        if ($[9] !== deleteMutation) {
+        if ($[6] !== deleteMutation) {
             t3 = ({
-                "NoteList[noteList.map()]": (note)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                "NoteList[notes.map()]": (note)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                         className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteList$2f$NoteList$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].listItem,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -777,16 +764,16 @@ function NoteList(t0) {
                                 children: note.title
                             }, void 0, false, {
                                 fileName: "[project]/components/NoteList/NoteList.tsx",
-                                lineNumber: 55,
-                                columnNumber: 88
+                                lineNumber: 43,
+                                columnNumber: 85
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteList$2f$NoteList$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].content,
                                 children: note.content
                             }, void 0, false, {
                                 fileName: "[project]/components/NoteList/NoteList.tsx",
-                                lineNumber: 55,
-                                columnNumber: 131
+                                lineNumber: 43,
+                                columnNumber: 128
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteList$2f$NoteList$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].footer,
@@ -796,8 +783,8 @@ function NoteList(t0) {
                                         children: note.tag
                                     }, void 0, false, {
                                         fileName: "[project]/components/NoteList/NoteList.tsx",
-                                        lineNumber: 55,
-                                        columnNumber: 204
+                                        lineNumber: 43,
+                                        columnNumber: 201
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteList$2f$NoteList$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].link,
@@ -805,59 +792,59 @@ function NoteList(t0) {
                                         children: "View details"
                                     }, void 0, false, {
                                         fileName: "[project]/components/NoteList/NoteList.tsx",
-                                        lineNumber: 55,
-                                        columnNumber: 247
+                                        lineNumber: 43,
+                                        columnNumber: 244
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: {
-                                            "NoteList[noteList.map() > <button>.onClick]": ()=>deleteMutation.mutate(note.id)
-                                        }["NoteList[noteList.map() > <button>.onClick]"],
+                                            "NoteList[notes.map() > <button>.onClick]": ()=>deleteMutation.mutate(note.id)
+                                        }["NoteList[notes.map() > <button>.onClick]"],
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteList$2f$NoteList$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].button,
                                         children: "Delete"
                                     }, void 0, false, {
                                         fileName: "[project]/components/NoteList/NoteList.tsx",
-                                        lineNumber: 55,
-                                        columnNumber: 320
+                                        lineNumber: 43,
+                                        columnNumber: 317
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/NoteList/NoteList.tsx",
-                                lineNumber: 55,
-                                columnNumber: 176
+                                lineNumber: 43,
+                                columnNumber: 173
                             }, this)
                         ]
                     }, note.id, true, {
                         fileName: "[project]/components/NoteList/NoteList.tsx",
-                        lineNumber: 55,
-                        columnNumber: 45
+                        lineNumber: 43,
+                        columnNumber: 42
                     }, this)
-            })["NoteList[noteList.map()]"];
-            $[9] = deleteMutation;
-            $[10] = t3;
+            })["NoteList[notes.map()]"];
+            $[6] = deleteMutation;
+            $[7] = t3;
         } else {
-            t3 = $[10];
+            t3 = $[7];
         }
-        t2 = noteList.map(t3);
-        $[6] = deleteMutation;
-        $[7] = noteList;
-        $[8] = t2;
+        t2 = notes.map(t3);
+        $[3] = deleteMutation;
+        $[4] = notes;
+        $[5] = t2;
     } else {
-        t2 = $[8];
+        t2 = $[5];
     }
     let t3;
-    if ($[11] !== t2) {
+    if ($[8] !== t2) {
         t3 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteList$2f$NoteList$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].list,
             children: t2
         }, void 0, false, {
             fileName: "[project]/components/NoteList/NoteList.tsx",
-            lineNumber: 73,
+            lineNumber: 61,
             columnNumber: 10
         }, this);
-        $[11] = t2;
-        $[12] = t3;
+        $[8] = t2;
+        $[9] = t3;
     } else {
-        t3 = $[12];
+        t3 = $[9];
     }
     return t3;
 }
@@ -868,9 +855,8 @@ _s(NoteList, "oYTQ704itJIJvNNInQNZBXgyScw=", false, function() {
     ];
 });
 _c = NoteList;
-async function _temp(id) {
-    const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["deleteNote"])(id);
-    return res;
+function _temp(id) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["deleteNote"])(id);
 }
 var _c;
 __turbopack_context__.k.register(_c, "NoteList");
@@ -903,13 +889,13 @@ var _s = __turbopack_context__.k.signature();
 function SearchBox(t0) {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(8);
-    if ($[0] !== "61ee4e06d402f35826ca0680ab5923a7631aefdb0824e1bda0c091ad345dc80c") {
+    if ($[0] !== "68236bb27216c87d83e226ba9f4ee8423709786ac2169c46fe94165ba5f11475") {
         for(let $i = 0; $i < 8; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "61ee4e06d402f35826ca0680ab5923a7631aefdb0824e1bda0c091ad345dc80c";
+        $[0] = "68236bb27216c87d83e226ba9f4ee8423709786ac2169c46fe94165ba5f11475";
     }
-    const { changeWord } = t0;
+    const { onSearchChange } = t0;
     const [text, setText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     let t1;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
@@ -923,17 +909,17 @@ function SearchBox(t0) {
     const handleChange = t1;
     let t2;
     let t3;
-    if ($[2] !== changeWord || $[3] !== text) {
+    if ($[2] !== onSearchChange || $[3] !== text) {
         t2 = ({
             "SearchBox[useEffect()]": ()=>{
-                changeWord(text);
+                onSearchChange(text);
             }
         })["SearchBox[useEffect()]"];
         t3 = [
             text,
-            changeWord
+            onSearchChange
         ];
-        $[2] = changeWord;
+        $[2] = onSearchChange;
         $[3] = text;
         $[4] = t2;
         $[5] = t3;
@@ -994,22 +980,22 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$pag
 ;
 function Pagination(t0) {
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(7);
-    if ($[0] !== "e8f4e67cb8066b56a258c9c75cf8dea103aa5045f5710dc8c67691c29b290505") {
+    if ($[0] !== "a0393df4a9606d0bad4d9784ce1fe5b99414c5f7d9197ab9f63fa2d290db3955") {
         for(let $i = 0; $i < 7; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "e8f4e67cb8066b56a258c9c75cf8dea103aa5045f5710dc8c67691c29b290505";
+        $[0] = "a0393df4a9606d0bad4d9784ce1fe5b99414c5f7d9197ab9f63fa2d290db3955";
     }
-    const { page, totalPages, setPage } = t0;
+    const { page, totalPages, onPageChange } = t0;
     let t1;
-    if ($[1] !== setPage) {
+    if ($[1] !== onPageChange) {
         t1 = ({
             "Pagination[<ReactPaginate>.onPageChange]": (t2)=>{
                 const { selected } = t2;
-                return setPage(selected + 1);
+                return onPageChange(selected + 1);
             }
         })["Pagination[<ReactPaginate>.onPageChange]"];
-        $[1] = setPage;
+        $[1] = onPageChange;
         $[2] = t1;
     } else {
         t1 = $[2];
@@ -1085,11 +1071,11 @@ var _s = __turbopack_context__.k.signature();
 function NotesClient() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(24);
-    if ($[0] !== "1d3763fd51496320b7db49e0ba27d223bcb6e2449806b7619b200dc37e3c0cb2") {
+    if ($[0] !== "0df55f14f900fa2d89eef9d68f5cb50f20aa316acfd9238d891cba5980ccee50") {
         for(let $i = 0; $i < 24; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "1d3763fd51496320b7db49e0ba27d223bcb6e2449806b7619b200dc37e3c0cb2";
+        $[0] = "0df55f14f900fa2d89eef9d68f5cb50f20aa316acfd9238d891cba5980ccee50";
     }
     const [page, setPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
     const [isModal, setIsModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -1146,17 +1132,17 @@ function NotesClient() {
     } else {
         t3 = $[6];
     }
-    const changeWord = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$use$2d$debounce$2f$dist$2f$index$2e$module$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebouncedCallback"])(t3, 500);
+    const onSearchChange = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$use$2d$debounce$2f$dist$2f$index$2e$module$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebouncedCallback"])(t3, 500);
     let t4;
-    if ($[7] !== changeWord) {
+    if ($[7] !== onSearchChange) {
         t4 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$SearchBox$2f$SearchBox$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-            changeWord: changeWord
+            onSearchChange: onSearchChange
         }, void 0, false, {
             fileName: "[project]/app/notes/Notes.client.tsx",
-            lineNumber: 79,
+            lineNumber: 78,
             columnNumber: 10
         }, this);
-        $[7] = changeWord;
+        $[7] = onSearchChange;
         $[8] = t4;
     } else {
         t4 = $[8];
@@ -1166,10 +1152,10 @@ function NotesClient() {
         t5 = data && data.totalPages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Pagination$2f$Pagination$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
             page: page,
             totalPages: data.totalPages,
-            setPage: setPage
+            onPageChange: setPage
         }, void 0, false, {
             fileName: "[project]/app/notes/Notes.client.tsx",
-            lineNumber: 87,
+            lineNumber: 86,
             columnNumber: 41
         }, this);
         $[9] = data;
@@ -1186,7 +1172,7 @@ function NotesClient() {
             children: "Create note +"
         }, void 0, false, {
             fileName: "[project]/app/notes/Notes.client.tsx",
-            lineNumber: 96,
+            lineNumber: 95,
             columnNumber: 10
         }, this);
         $[12] = t6;
@@ -1204,7 +1190,7 @@ function NotesClient() {
             ]
         }, void 0, true, {
             fileName: "[project]/app/notes/Notes.client.tsx",
-            lineNumber: 103,
+            lineNumber: 102,
             columnNumber: 10
         }, this);
         $[13] = t4;
@@ -1216,13 +1202,10 @@ function NotesClient() {
     let t8;
     if ($[16] !== data) {
         t8 = data && data.notes.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteList$2f$NoteList$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-            noteList: data.notes,
-            setIsModal: setIsModal,
-            setMessage: _NotesClientNoteListSetMessage,
-            setTypeModal: _NotesClientNoteListSetTypeModal
+            notes: data.notes
         }, void 0, false, {
             fileName: "[project]/app/notes/Notes.client.tsx",
-            lineNumber: 112,
+            lineNumber: 111,
             columnNumber: 43
         }, this);
         $[16] = data;
@@ -1235,18 +1218,15 @@ function NotesClient() {
         t9 = isModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Modal$2f$Modal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
             onClose: closeModal,
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$NoteForm$2f$NoteForm$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                onCancel: closeModal,
-                setIsModal: setIsModal,
-                setMessage: _NotesClientNoteFormSetMessage,
-                setTypeModal: _NotesClientNoteFormSetTypeModal
+                onClose: closeModal
             }, void 0, false, {
                 fileName: "[project]/app/notes/Notes.client.tsx",
-                lineNumber: 120,
+                lineNumber: 119,
                 columnNumber: 49
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/notes/Notes.client.tsx",
-            lineNumber: 120,
+            lineNumber: 119,
             columnNumber: 21
         }, this);
         $[18] = isModal;
@@ -1265,7 +1245,7 @@ function NotesClient() {
             ]
         }, void 0, true, {
             fileName: "[project]/app/notes/Notes.client.tsx",
-            lineNumber: 128,
+            lineNumber: 127,
             columnNumber: 11
         }, this);
         $[20] = t7;
@@ -1277,17 +1257,13 @@ function NotesClient() {
     }
     return t10;
 }
-_s(NotesClient, "41OnK+NtGQXc9Rxog0zjpJhGkgQ=", false, function() {
+_s(NotesClient, "QV+41fogXv+Uq6fqtVbpxFM2mBQ=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useQuery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQuery"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$use$2d$debounce$2f$dist$2f$index$2e$module$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebouncedCallback"]
     ];
 });
 _c = NotesClient;
-function _NotesClientNoteFormSetTypeModal() {}
-function _NotesClientNoteFormSetMessage() {}
-function _NotesClientNoteListSetTypeModal() {}
-function _NotesClientNoteListSetMessage() {}
 var _c;
 __turbopack_context__.k.register(_c, "NotesClient");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
