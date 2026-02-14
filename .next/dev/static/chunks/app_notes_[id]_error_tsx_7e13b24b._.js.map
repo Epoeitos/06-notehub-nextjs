@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["A:/projects/08.02/06-notehub-nextjs/app/notes/[id]/error.tsx"],"sourcesContent":["'use client';\r\n\r\ninterface ErrorProps {\r\n  error: Error;\r\n}\r\n\r\nexport default function Error({ error }: ErrorProps) {\r\n  return <p>Could not fetch note details. {error.message}</p>;\r\n}"],"names":["c","_c","ErrorProps","error","Error","t0","$","$i","Symbol","for","t1","message"],"mappings":";;;;;AAAa,SAAAA,CAAA,IAAAC,EAAA;AAAb,YAAY;;;AAMG,eAAAI,EAAA;IAAA,MAAAC,CAAA,OAAAL,gLAAA,EAAA;IAAA,IAAAK,CAAA,CAAA,EAAA,KAAA,oEAAA;QAAA,IAAA,IAAAC,EAAA,GAAA,GAAAA,EAAA,GAAA,GAAAA,EAAA,IAAA,EAAA;YAAAD,CAAA,CAAAC,EAAA,CAAA,GAAAC,MAAA,CAAAC,GAAA,CAAA;QAAA;QAAAH,CAAA,CAAA,EAAA,GAAA;IAAA;IAAe,MAAA,EAAAH,KAAAA,EAAA,GAAAE,EAAqB;IAAA,IAAAK,EAAA;IAAA,IAAAJ,CAAA,CAAA,EAAA,KAAAH,KAAA,CAAAQ,OAAA,EAAA;QAC1CD,EAAA,iBAAA,6LAAA,CAAoD;;gBAAjD,8BAA+B;gBAAAP,KAAK,CAAAQ,OAAO,CAAE,EAAhD,CAAoD;;;;;;;QAAAL,CAAA,CAAA,EAAA,GAAAH,KAAA,CAAAQ,OAAA;QAAAL,CAAA,CAAA,EAAA,GAAAI,EAAA;IAAA,OAAA;QAAAA,EAAA,GAAAJ,CAAA,CAAA,EAAA;IAAA;IAAA,OAApDI,EAAoD;AAAA;KAD9CN","ignoreList":[]}}]
+}
